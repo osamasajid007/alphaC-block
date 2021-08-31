@@ -1,23 +1,3 @@
 <h1>this is a new article</h1>
-<% if @article.errors.any? %>
-    <% @article.errors.full_messages.each do |msg| %>
-        <ul><li><%=msg%> </li></ul>
-       
-    <%end%>
-<%end%>
-
-
- <%= form_with scope: :article, url: articles_path, local: true do |f|%>
- <p>
- <%=f.label :title %>
- <%=f.text_field :title%>
- </p>
- <br>
- <p>
- <%=f.label :description %>
- <%=f.text_area :description%>
- </p>
- <p>
- <%=f.submit%>
- </p>
- <%end%>
+<%= render "form" %>
+ <%= link_to "Return to main", articles_path %>
